@@ -1,7 +1,7 @@
 import axios from '../config/axios.config';
-import { UserType } from '../types/type';
+import { IUser } from '../types/type';
 
-const getUserInfo = async (): Promise<UserType | null> => {
+const getUserInfo = async (): Promise<IUser | null> => {
   try {
     const { data } = await axios({
       url: '/users/1',

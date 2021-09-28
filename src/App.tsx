@@ -1,7 +1,7 @@
 import React from 'react';
-import Articles from './component/Articles';
-import User from './component/User';
-import ErrorBoundary from './component/ErrorBoundary';
+import Articles from './components/Article';
+import User from './components/User';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (

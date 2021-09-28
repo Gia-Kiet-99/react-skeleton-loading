@@ -1,5 +1,5 @@
 import React, { ErrorInfo } from 'react';
-import './index.css';
+import './ErrorBoundary.css';
 
 type PropsType = {
   fallback?: React.ReactElement,

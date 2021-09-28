@@ -1,29 +1,36 @@
-export interface GeoType {
+export interface IGeo {
   lat: string,
   lng: string
 }
 
-export interface Address {
+export interface IAddress {
   street: string,
   suite: string,
   city: string,
   zipcode: string,
-  geo: GeoType
+  geo: IGeo
 }
 
-export interface Company {
+export interface ICompany {
   name: string,
   catchPhrase: string,
   bs: string
 }
 
-export interface UserType {
+export interface IUser {
   id: number,
   name: string,
   username: string,
   email: string,
-  address: Address,
+  address: IAddress,
   phone: string,
   website: string,
-  company: Company,
+  company: ICompany,
+}
+
+export interface IArticle {
+  userId: number,
+  id: number,
+  title: string,
+  body: string
 }

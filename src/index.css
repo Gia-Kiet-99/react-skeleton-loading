@@ -7,10 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   color: #444;
-  /*background-image: url("/public/logo512.png");*/
-  /*background-repeat: no-repeat;*/
-  /*background-attachment: fixed;*/
-  /*background-position: center;*/
 }
 
 code {
@@ -35,6 +31,7 @@ h2 {
 }
 
 .content {
+  /*box-sizing: border-box;*/
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
