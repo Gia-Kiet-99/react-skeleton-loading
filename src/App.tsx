@@ -3,6 +3,8 @@ import Articles from './components/Article';
 import User from './components/User';
 import ErrorBoundary from './components/ErrorBoundary';
 
+import './styles.scss';
+
 function App() {
   return (
     <div className="App">
