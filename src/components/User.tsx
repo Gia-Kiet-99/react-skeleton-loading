@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { IUser } from 'types/type';
-import userService from '../service/user';
+import userService from '../api/UserAPI';
 import SkeletonProfile from './SkeletonProfile';
 
 const User: React.FC = () => {
   const [profile, setProfile] = useState<IUser | null>(null);
 
   useEffect(() => {
-    userService.getUserInfo()
-      .then((user) => {
-        if (user) {
-          setProfile(user);
-        }
-      });
+    setTimeout(() => {
+      userService.getUserInfo()
+        .then((user) => {
+          if (user) {
+            setProfile(user);
+          }
+        });
+    }, 10000);
   }, []);
 
   return (
@@ -28,7 +30,7 @@ const User: React.FC = () => {
       )}
 
       {!profile && (
-        <SkeletonProfile/>
+        <SkeletonProfile />
       )}
     </div>
   );

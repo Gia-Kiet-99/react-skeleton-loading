@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "webpack serve --open",
-    "lint": "eslint \"./src/*\"",
+    "lint": "eslint \"./src/**\"",
     "build": "webpack"
   },
   "dependencies": {

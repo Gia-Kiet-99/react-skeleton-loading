@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import articleService from '../service/article';
+import articleService from '../api/ArticleAPI';
 import { IArticle } from '../types/type';
 import SkeletonArticle from './SkeletonArticle';
 
@@ -7,12 +7,14 @@ function Articles() {
   const [articles, setArticles] = useState<IArticle[] | null>(null);
 
   useEffect(() => {
-    articleService.getAllArticles()
-      .then((data) => {
-        if (data) {
-          setArticles(data);
-        }
-      });
+    setTimeout(() => {
+      articleService.getAllArticles()
+        .then((data) => {
+          if (data) {
+            setArticles(data);
+          }
+        });
+    }, 10000);
   }, []);
 
   return (
@@ -29,7 +31,7 @@ function Articles() {
       )}
 
       {!articles && (
-        [1, 2, 3, 4, 5].map((n) => <SkeletonArticle key={n}/>)
+        [1, 2, 3, 4, 5].map((n) => <SkeletonArticle key={n} />)
       )}
     </div>
   );

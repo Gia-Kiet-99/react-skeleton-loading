@@ -33,14 +33,11 @@ class ErrorBoundary extends React.Component<PropsType, StateType> {
       error,
       errorInfo,
     });
-    // You can also log error messages to an error reporting service here
+    // You can also log error messages to an error reporting api here
   }
 
   render() {
-    const {
-      error,
-      errorInfo,
-    } = this.state;
+    const { error, errorInfo } = this.state;
     if (errorInfo) {
       // Error path
       return (
