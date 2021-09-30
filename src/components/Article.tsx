@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import articleService from '../api/ArticleAPI';
-import { IArticle } from '../types/type';
 import SkeletonArticle from './SkeletonArticle';
+import { setArticles } from '../actions/articleAction';
+import { RootState } from '../global/store';
 
 function Articles() {
-  const [articles, setArticles] = useState<IArticle[] | null>(null);
+  const articles = useSelector((state: RootState) => state.articles);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => {
       articleService.getAllArticles()
         .then((data) => {
           if (data) {
-            setArticles(data);
+            dispatch(setArticles(data));
           }
         });
-    }, 10000);
+    }, 5000);
   }, []);
 
   return (
     <div className="articles">
       <h2>All Articles</h2>
 
-      {articles && (
+      {articles.length > 0 && (
         articles.map((article) => (
           <div className="article" key={article.id}>
             <h3>{article.title}</h3>
@@ -30,7 +33,7 @@ function Articles() {
         ))
       )}
 
-      {!articles && (
+      {articles.length <= 0 && (
         [1, 2, 3, 4, 5].map((n) => <SkeletonArticle key={n} />)
       )}
     </div>
