@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   env: {
     browser: true,
@@ -23,6 +25,9 @@ module.exports = {
   settings: {
     'import/resolver': {
       typescript: {},
+      webpack: {
+        config: path.join(__dirname, 'webpack.config.js'),
+      },
     },
   },
   rules: {

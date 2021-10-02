@@ -10,7 +10,18 @@ module.exports = {
     clean: true,
   },
   resolve: {
+    roots: [path.resolve(__dirname, 'src')],
     extensions: ['.js', '.ts', '.tsx'],
+    alias: {
+      components: path.resolve(__dirname, 'src', 'components'),
+      actions: path.resolve(__dirname, 'src', 'actions'),
+      api: path.resolve(__dirname, 'src', 'api'),
+      config: path.resolve(__dirname, 'src', 'config'),
+      global: path.resolve(__dirname, 'src', 'global'),
+      providers: path.resolve(__dirname, 'src', 'providers'),
+      reducers: path.resolve(__dirname, 'src', 'reducers'),
+      types: path.resolve(__dirname, 'src', 'types'),
+    },
   },
   devtool: 'inline-source-map',
   devServer: {
