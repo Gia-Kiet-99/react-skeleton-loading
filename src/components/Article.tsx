@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import articleService from '../api/ArticleAPI';
+import articleService from 'api/ArticleAPI';
+import { setArticles } from 'actions/articleAction';
+import { RootState } from 'global/store';
 import SkeletonArticle from './SkeletonArticle';
-import { setArticles } from '../actions/articleAction';
-import { RootState } from '../global/store';
 
 function Articles() {
   const articles = useSelector((state: RootState) => state.articles);

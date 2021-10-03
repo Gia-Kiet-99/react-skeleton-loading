@@ -1,4 +1,4 @@
-import { IArticle, IArticleAction } from '../types/type';
+import { IArticle, IArticleAction } from 'types/type';
 
 const articleReducer = (state: IArticle[] = [], action: IArticleAction): IArticle[] => {
   switch (action.type) {

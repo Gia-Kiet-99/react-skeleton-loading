@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IUser } from 'types/type';
-import userService from '../api/UserAPI';
+import userService from 'api/UserAPI';
 import SkeletonProfile from './SkeletonProfile';
 
 const User: React.FC = () => {
