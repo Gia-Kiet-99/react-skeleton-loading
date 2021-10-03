@@ -7,14 +7,14 @@ const User: React.FC = () => {
   const [profile, setProfile] = useState<IUser | null>(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      userService.getUserInfo()
-        .then((user) => {
-          if (user) {
-            setProfile(user);
-          }
-        });
-    }, 10000);
+    // setTimeout(() => {
+    userService.getUserInfo()
+      .then((user) => {
+        if (user) {
+          setProfile(user);
+        }
+      });
+    // }, 0);
   }, []);
 
   return (

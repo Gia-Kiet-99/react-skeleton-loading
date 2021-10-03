@@ -1,11 +1,9 @@
 import React from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
 import './App.scss';
-// import Articles from './components/Article';
-// import User from './components/User';
-// import ErrorBoundary from './components/ErrorBoundary';
+
 const Articles = React.lazy(() => import('components/Article'));
 const User = React.lazy(() => import('components/User'));
-const ErrorBoundary = React.lazy(() => import('components/ErrorBoundary'));
 
 function App() {
   return (
