@@ -1,5 +1,5 @@
 import React from 'react';
-import './skeleton.css';
+import './skeleton.scss';
 
 interface IProps {
   type: string;

@@ -42,14 +42,8 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, 'src'),
         use: ['babel-loader'],
-        // use: {
-        //   loader: 'babel-loader',
-        //   options: {
-        //     presets: ['@babel/preset-env', '@babel/react', '@babel/typescript'],
-        //   },
-        // },
       },
       {
         test: /\.css$/i,
@@ -74,6 +68,7 @@ module.exports = {
   },
   optimization: {
     moduleIds: 'deterministic',
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendor: {

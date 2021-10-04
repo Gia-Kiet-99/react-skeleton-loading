@@ -1,6 +1,6 @@
 import React from 'react';
-import SkeletonElement from './SkeletonElement';
-import Shimmer from './Shimmer';
+import SkeletonElement from './skeletonElement';
+import Shimmer from './shimmer';
 
 const SkeletonArticle = () => (
   <div className="skeleton-wrapper">

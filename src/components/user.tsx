@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { IUser } from 'types/type';
+import { IUser } from 'types';
 import userService from 'api/UserAPI';
-import SkeletonProfile from './SkeletonProfile';
+import SkeletonProfile from './skeletonProfile';
 
 const User: React.FC = () => {
   const [profile, setProfile] = useState<IUser | null>(null);

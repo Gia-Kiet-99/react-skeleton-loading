@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import articleService from 'api/ArticleAPI';
 import { setArticles } from 'actions/articleAction';
 import { RootState } from 'global/store';
-import SkeletonArticle from './SkeletonArticle';
+import SkeletonArticle from './skeletonArticle';
 
 function Articles() {
   const articles = useSelector((state: RootState) => state.articles);

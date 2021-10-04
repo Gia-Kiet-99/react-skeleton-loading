@@ -1,5 +1,5 @@
 import axios from 'config/axios.config';
-import { IArticle } from 'types/type';
+import { IArticle } from 'types';
 
 function handleError(error: any) {
   if (error.response) {

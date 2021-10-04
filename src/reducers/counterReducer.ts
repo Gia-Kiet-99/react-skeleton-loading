@@ -1,4 +1,4 @@
-import { ICounterAction } from 'types/type';
+import { ICounterAction } from 'types';
 
 const counterReducer = (state = 0, action: ICounterAction) => {
   switch (action.type) {

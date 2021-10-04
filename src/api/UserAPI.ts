@@ -1,5 +1,5 @@
 import axios from 'config/axios.config';
-import { IUser } from 'types/type';
+import { IUser } from 'types';
 
 const getUserInfo = async (): Promise<IUser | null> => {
   try {
