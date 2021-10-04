@@ -30,6 +30,7 @@ module.exports = {
     port: 8080,
     liveReload: true,
     static: path.resolve(__dirname, 'public'),
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
