@@ -3,8 +3,6 @@ import './App.scss';
 import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
-// import Home from './components/home';
-// import Login from './components/login';
 
 const Home = React.lazy(() => import(/* webpackChunkName: 'home' */ 'components/home'));
 const Login = React.lazy(() => import(/* webpackChunkName: 'login' */ 'components/login'));

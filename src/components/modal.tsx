@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import './modal.scss';
 
 interface IModalProps {
   children: React.ReactNode;

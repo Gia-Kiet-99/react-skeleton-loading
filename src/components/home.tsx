@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import ErrorBoundary from './errorBoundary';
 import ArticlesComponent from './article';
 import UserComponent from './user';
+import styles from './modal.module.scss';
 
 const Articles = React.memo(ArticlesComponent);
 const User = React.memo(UserComponent);
-
 const Modal = React.lazy(() => import(/* webpackChunkName: 'modal' */ /* webpackPrefetch: true */ 'components/modal'));
 
 const Home = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
-
+  console.log(styles);
   const onShowModalClick = (): void => {
     setShowModal(true);
   };
@@ -20,7 +20,7 @@ const Home = () => {
   };
   const modal = showModal ? (
     <Modal>
-      <div className="modal">
+      <div id={styles.modal}>
         <h2>This is my Modal</h2>
         <button type="button" onClick={onHideModalClick}>
           Hide modal

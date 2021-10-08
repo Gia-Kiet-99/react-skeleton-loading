@@ -10,14 +10,14 @@ function Articles() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // setTimeout(() => {
-    articleService.getAllArticles()
-      .then((data) => {
-        if (data) {
-          dispatch(setArticles(data));
-        }
-      });
-    // }, 0);
+    setTimeout(() => {
+      articleService.getAllArticles()
+        .then((data) => {
+          if (data) {
+            dispatch(setArticles(data));
+          }
+        });
+    }, 3000);
   }, []);
 
   return (
