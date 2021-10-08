@@ -11,7 +11,7 @@ const Modal = React.lazy(() => import(/* webpackChunkName: 'modal' */ /* webpack
 
 const Home = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
-  console.log(styles);
+
   const onShowModalClick = (): void => {
     setShowModal(true);
   };
@@ -20,7 +20,7 @@ const Home = () => {
   };
   const modal = showModal ? (
     <Modal>
-      <div id={styles.modal}>
+      <div className={styles.modal}>
         <h2>This is my Modal</h2>
         <button type="button" onClick={onHideModalClick}>
           Hide modal
