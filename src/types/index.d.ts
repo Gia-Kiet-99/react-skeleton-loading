@@ -58,3 +58,13 @@ export interface IArticleAction {
 export interface ArticleState {
   data: IArticle[];
 }
+
+export interface IUserAction {
+  type: string,
+  payload: IUser
+}
+
+export interface IAuthState {
+  logged: boolean,
+  user: IUser | null
+}

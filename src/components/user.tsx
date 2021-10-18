@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { IUser } from 'types';
+import React, { useEffect } from 'react';
 import userService from 'api/UserAPI';
+import { useAppDispatch, useAppSelector } from 'global/store';
+import { login } from 'actions/authAction';
 import SkeletonProfile from './skeletonProfile';
 
 const User: React.FC = () => {
-  const [profile, setProfile] = useState<IUser | null>(null);
+  const { user: profile } = useAppSelector((state) => state.authentication);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     userService.getUserInfo(1)
       .then((user) => {
         if (user) {
-          setProfile(user);
+          dispatch(login(user));
         }
       });
   }, []);

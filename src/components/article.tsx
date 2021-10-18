@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import articleService from 'api/ArticleAPI';
 import { setArticles } from 'actions/articleAction';
-import { RootState } from 'global/store';
+import { useAppDispatch, useAppSelector } from 'global/store';
 import SkeletonArticle from './skeletonArticle';
 
 function Articles() {
-  const articles = useSelector((state: RootState) => state.articles);
-  const dispatch = useDispatch();
+  const articles = useAppSelector((state) => state.articles);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     setTimeout(() => {
