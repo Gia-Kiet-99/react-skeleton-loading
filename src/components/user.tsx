@@ -9,13 +9,15 @@ const User: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    userService.getUserInfo(1)
-      .then((user) => {
-        if (user) {
-          dispatch(login(user));
-        }
-      });
-  }, []);
+    if (!profile) {
+      userService.getUserInfo(1)
+        .then((user) => {
+          if (user) {
+            dispatch(login(user));
+          }
+        });
+    }
+  }, [profile]);
 
   return (
     <div className="user">

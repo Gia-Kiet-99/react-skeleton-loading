@@ -9,15 +9,17 @@ function Articles() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setTimeout(() => {
-      articleService.getAllArticles()
-        .then((data) => {
-          if (data) {
-            dispatch(setArticles(data));
-          }
-        });
-    }, 3000);
-  }, []);
+    if (articles.length === 0) {
+      setTimeout(() => {
+        articleService.getAllArticles()
+          .then((data) => {
+            if (data) {
+              dispatch(setArticles(data));
+            }
+          });
+      }, 3000);
+    }
+  }, [articles]);
 
   return (
     <div className="articles">
