@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import userService from 'api/UserAPI';
 import { useAppDispatch, useAppSelector } from 'global/store';
 import { login } from 'actions/authAction';
@@ -38,4 +38,4 @@ const User: React.FC = () => {
   );
 };
 
-export default User;
+export default memo(User);

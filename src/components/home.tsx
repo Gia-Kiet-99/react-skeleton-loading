@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ErrorBoundary from './errorBoundary';
-import ArticlesComponent from './article';
-import UserComponent from './user';
+import Articles from './article';
+import User from './user';
 import styles from './modal.module.scss';
 
-const Articles = React.memo(ArticlesComponent);
-const User = React.memo(UserComponent);
 const Modal = React.lazy(() => import(/* webpackChunkName: 'modal' */ /* webpackPrefetch: true */ 'components/modal'));
 
 const Home = () => {

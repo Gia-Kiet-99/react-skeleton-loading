@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import articleService from 'api/ArticleAPI';
 import { setArticles } from 'actions/articleAction';
 import { useAppDispatch, useAppSelector } from 'global/store';
@@ -41,4 +41,4 @@ function Articles() {
   );
 }
 
-export default Articles;
+export default memo(Articles);
