@@ -42,8 +42,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
         include: path.resolve(__dirname, 'src'),
+        test: /\.(ts|tsx)$/,
         use: ['babel-loader'],
       },
       {
